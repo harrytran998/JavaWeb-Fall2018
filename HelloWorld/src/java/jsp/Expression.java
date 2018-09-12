@@ -7,7 +7,9 @@ package jsp;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,12 +34,21 @@ public class Expression extends HttpServlet {
             out.println("<title>Servlet Expression</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Expression at " + new Date() + "</h1>");
+            out.println("<h1>Servlet Expression at " + display() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
     }
 
+    protected Object display() {
+        ArrayList a = new ArrayList();
+        for (int i = 0; i < 10; i++) {
+            a.add("<br/> Fuck yeah : " + i);
+        }
+        return a;
+    }
+    
+   
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
